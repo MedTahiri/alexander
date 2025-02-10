@@ -48,6 +48,8 @@
 
 - **Backend Framework**: Spring Boot.
 
+- **Android Tools**: Android Studio
+
 ---
 
 # 🤝 Contributing
