@@ -1,0 +1,1 @@
+# JAVA_HOME="/home/mohamed-tahiri/jmonkeyplatform/jdk" cd /home/mohamed-tahiri/Projects/Alexander; ./gradlew --configure-on-demand -x check run
