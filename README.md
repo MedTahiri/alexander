@@ -7,7 +7,7 @@
 # 📸 Screenshots
 
 <p align="center">
-<img src="screenshots/Screenshot%20From%202025-02-10%2009-48-04.png" alt="1" height="500">
+<img src="screenshots/Screenshot%20From%202025-02-10%2009-48-04.png" alt="1">
 </p>
 
 # 🛠 Tech Stack
