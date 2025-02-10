@@ -5,15 +5,20 @@
 ---
 
 # Features
+
 - **3D Model**: A highly detailed and realistic 3D character model.
 
 - **Conversational AI**: Integrated AI that enables the 3D model to understand and respond to user inputs in natural language.
 
 - **Lip Syncing**: Real-time lip syncing to match the AI-generated speech with the 3D model's mouth movements.
 
+- **Facial Expressions**: Supports a variety of expressions, including smiles, frowns, and eyebrow movements.
+
 - **Emotion Recognition**: Ability to detect and respond to user emotions through text or voice inputs.
 
 - **Customizable**: Easily customizable 3D model and AI behavior to fit various applications.
+  
+- **Cross-Platform**: Can be used on desktop or android and web applications.
 
 ---
 
@@ -26,6 +31,22 @@
 ---
 
 # 🛠 Tech Stack
+
+- **Programming Language**: java.
+
+- **3D Modeling**: Blender.
+
+- **Game Engine**: Jmonkeyengine.
+
+- **Natural Language Processing**: OpenAI GPT.
+
+- **Speech Synthesis**: Elevenlabs.
+
+- **Lip Syncing**: Rhubarb Lip Sync.
+
+- **Machine Learning**: TensorFlow.
+
+- **Backend Framework**: Spring Boot.
 
 ---
 
