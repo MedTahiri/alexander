@@ -4,6 +4,19 @@
 
 ---
 
+# Features
+- **3D Model**: A highly detailed and realistic 3D character model.
+
+- **Conversational AI**: Integrated AI that enables the 3D model to understand and respond to user inputs in natural language.
+
+- **Lip Syncing**: Real-time lip syncing to match the AI-generated speech with the 3D model's mouth movements.
+
+- **Emotion Recognition**: Ability to detect and respond to user emotions through text or voice inputs.
+
+- **Customizable**: Easily customizable 3D model and AI behavior to fit various applications.
+
+---
+
 # 📸 Screenshots
 
 <p align="center">
