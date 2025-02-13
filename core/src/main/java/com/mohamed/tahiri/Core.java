@@ -23,6 +23,11 @@ public class Core extends SimpleApplication {
     private String[] morphTargetNames;
     private Geometry geometry;
 
+    private int currentMorphIndex = 0;
+    private float animationTime = 0;
+    private final float ANIMATION_DURATION = 2.0f; // Duration for each morph target
+
+
     @Override
     public void simpleInitApp() {
         assetManager.registerLoader(LwjglAssetLoader.class, "gltf");
@@ -55,12 +60,6 @@ public class Core extends SimpleApplication {
         //will print this list
         //[viseme_sil, viseme_PP, viseme_FF, viseme_TH, viseme_DD, viseme_kk, viseme_CH, viseme_SS, viseme_nn, viseme_RR, viseme_aa, viseme_E, viseme_I, viseme_O, viseme_U, browDownLeft, browDownRight, browInnerUp, browOuterUpLeft, browOuterUpRight, eyeSquintLeft, eyeSquintRight, eyeWideLeft, eyeWideRight, jawForward, jawLeft, jawRight, mouthFrownLeft, mouthFrownRight, mouthPucker, mouthShrugLower, mouthShrugUpper, noseSneerLeft, noseSneerRight, mouthLowerDownLeft, mouthLowerDownRight, mouthLeft, mouthRight, eyeLookDownLeft, eyeLookDownRight, eyeLookUpLeft, eyeLookUpRight, eyeLookInLeft, eyeLookInRight, eyeLookOutLeft, eyeLookOutRight, cheekPuff, cheekSquintLeft, cheekSquintRight, jawOpen, mouthClose, mouthFunnel, mouthDimpleLeft, mouthDimpleRight, mouthStretchLeft, mouthStretchRight, mouthRollLower, mouthRollUpper, mouthPressLeft, mouthPressRight, mouthUpperUpLeft, mouthUpperUpRight, mouthSmileLeft, mouthSmileRight, tongueOut, eyeBlinkLeft, eyeBlinkRight]
 
-
-//
-//        System.out.println(testModel("/home/mohamed-tahiri/Projects/alexander/core/assets/Models/3d/3d.gltf"));
-//        System.out.println(testModel("/home/mohamed-tahiri/Projects/alexander/core/assets/Models/animation/3d.gltf"));
-//        System.out.println(testModel("/home/mohamed-tahiri/Projects/alexander/core/assets/Models/avatar/gltf/untitled.gltf"));
-//        System.out.println(testModel("/home/mohamed-tahiri/Projects/alexander/core/assets/Models/avatar/674b11b316d540c2642c2f79.glb"));
 
         setupMorphControl();
         setupInputs();
@@ -165,6 +164,8 @@ public class Core extends SimpleApplication {
         inputManager.addMapping("visemeFF", new KeyTrigger(KeyInput.KEY_F));
         inputManager.addMapping("visemeO", new KeyTrigger(KeyInput.KEY_O));
 
+        inputManager.addMapping("eyeSquintLeft", new KeyTrigger(KeyInput.KEY_0));
+
         inputManager.addListener(new ActionListener() {
             @Override
             public void onAction(String name, boolean isPressed, float tpf) {
@@ -180,9 +181,37 @@ public class Core extends SimpleApplication {
                     case "visemeO":
                         setMorphTarget("viseme_O", isPressed ? 1.0f : 0.0f);
                         break;
+                    case "eyeSquintLeft":
+                        setMorphTarget("eyeSquintLeft", isPressed ? 1.0f : 0.0f);
+                        break;
                 }
             }
-        }, "visemePP", "visemeFF", "visemeO");
+        }, "visemePP", "visemeFF", "visemeO","eyeSquintLeft");
+    }
+
+    @Override
+    public void simpleUpdate(float tpf) {
+        if (morphControl == null || morphTargetNames == null) {
+            return;
+        }
+
+        animationTime += tpf;
+
+        // Reset previous morph target if we're moving to the next one
+        if (animationTime >= ANIMATION_DURATION) {
+            // Reset current morph target
+            setMorphTarget(morphTargetNames[currentMorphIndex], 0.0f);
+
+            // Move to next morph target
+            currentMorphIndex = (currentMorphIndex + 1) % morphTargetNames.length;
+            animationTime = 0;
+
+            // Print which morph target we're activating
+            System.out.println("Activating: " + morphTargetNames[currentMorphIndex]);
+        }
+
+        // Set the current morph target to 1.0
+        setMorphTarget(morphTargetNames[currentMorphIndex], 1.0f);
     }
 }
 /*
