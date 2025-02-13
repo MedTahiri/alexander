@@ -32,6 +32,7 @@ dependencies {
     //implementation(libs.jme3.lwjgl3)
     //implementation(libs.jme3.jogg)
     implementation(libs.jme3.plugins)
+    implementation("com.github.stephengold:MonkeyWrench:0.6.2")
     runtimeOnly(project("assets"))
 }
 
