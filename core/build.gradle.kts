@@ -1,4 +1,4 @@
-import java.util.*
+import java.util.Locale
 
 plugins {
     id("java")
@@ -25,15 +25,9 @@ val jmeVer = "3.6.1-stable"
 
 dependencies {
     implementation(libs.jme3.core)
-    //implementation(libs.jme3.desktop)
-//    if (!System.getProperty("os.name").lowercase(Locale.getDefault()).contains("mac")) {
-//        implementation("org.jmonkeyengine:jme3-awt-dialogs:$jmeVer")
-//    }
-    //implementation(libs.jme3.lwjgl3)
-    //implementation(libs.jme3.jogg)
+    implementation(libs.jme3.jogg)
     implementation(libs.jme3.plugins)
-    implementation("com.github.stephengold:MonkeyWrench:0.6.2")
-    runtimeOnly(project("assets"))
+    implementation(libs.monkeywrench)
 }
 
 java {
