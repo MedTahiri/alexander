@@ -30,7 +30,7 @@ public class Core extends SimpleApplication {
     @Override
     public void simpleInitApp() {
         assetManager.registerLoader(LwjglAssetLoader.class, "gltf");
-        LwjglAssetKey lwjglAssetKey = new LwjglAssetKey("Models/3d/3d.gltf");
+        LwjglAssetKey lwjglAssetKey = new LwjglAssetKey("Models/3d.gltf");
         lwjglAssetKey.setVerboseLogging(true);
         Spatial model = assetManager.loadModel(lwjglAssetKey);
 
