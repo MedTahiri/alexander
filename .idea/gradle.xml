@@ -14,7 +14,6 @@
             <option value="$PROJECT_DIR$/android/app" />
             <option value="$PROJECT_DIR$/backend" />
             <option value="$PROJECT_DIR$/core" />
-            <option value="$PROJECT_DIR$/core/assets" />
             <option value="$PROJECT_DIR$/desktop" />
             <option value="$PROJECT_DIR$/web" />
           </set>

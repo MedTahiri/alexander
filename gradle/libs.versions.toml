@@ -1,5 +1,5 @@
 [versions]
-agp = "8.7.2"
+agp = "8.8.1"
 jme3Android = "3.7.0-stable"
 junit = "4.13.2"
 junitVersion = "1.1.5"
@@ -13,6 +13,7 @@ coreKtx = "1.15.0"
 lifecycleRuntimeKtx = "2.8.7"
 activityCompose = "1.9.3"
 composeBom = "2024.04.01"
+monkeywrench = "0.6.2"
 
 [libraries]
 jme3-android = { module = "org.jmonkeyengine:jme3-android", version.ref = "jme3Android" }
@@ -34,6 +35,7 @@ core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx"
 lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
 activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
 compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
+monkeywrench = { module = "com.github.stephengold:MonkeyWrench", version.ref = "monkeywrench" }
 ui = { group = "androidx.compose.ui", name = "ui" }
 ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
 ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
