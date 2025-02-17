@@ -31,20 +31,36 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+
+    configurations.all {
+        exclude(group = "org.jmonkeyengine", module = "jme3-desktop")
+        exclude(group = "org.lwjgl")
+    }
+
+
     packagingOptions {
         resources {
             excludes += setOf(
-                "META-INF/AL2.0",
-                "META-INF/LGPL2.1",
+                "META-INF/DEPENDENCIES",
                 "META-INF/LICENSE",
                 "META-INF/LICENSE.txt",
+                "META-INF/LICENSE.md",
+                "META-INF/LICENSE-notice.md",
                 "META-INF/NOTICE",
                 "META-INF/NOTICE.txt",
-                "META-INF/macos/x64/org/lwjgl/glfw/libglfw.dylib.sha1",
+                "META-INF/NOTICE.md",
                 "META-INF/INDEX.LIST",
-                "META-INF/windows/x64/org/lwjgl/jemalloc/jemalloc.dll.sha1",
-                "META-INF/linux/x64/org/lwjgl/opengl/liblwjgl_opengl.so.sha1"
-                // Add any other files that are reported as duplicates
+                "META-INF/*.kotlin_module",
+                "META-INF/AL2.0",
+                "META-INF/LGPL2.1",
+                "META-INF/linux/**",
+                "META-INF/native/**",
+                "**/libassimp.so",
+                "**/libassimp.so.sha1",
+                "**/libdraco.so",
+                "**/libdraco.so.sha1",
+                "**/liblwjgl*.so",
+                "**/liblwjgl*.so.sha1"
             )
         }
     }
@@ -54,6 +70,7 @@ android {
     buildFeatures {
         compose = true
     }
+    buildToolsVersion = "35.0.0"
 
 }
 
@@ -75,13 +92,12 @@ dependencies {
     androidTestImplementation(libs.espresso.core)
     implementation(libs.jme3.android)
     implementation(libs.jme3.android.native)
-    //implementation(project(":android"))
+    implementation(libs.jme3.core)
     implementation(project(":core"))
     androidTestImplementation(platform(libs.compose.bom))
     androidTestImplementation(libs.ui.test.junit4)
     debugImplementation(libs.ui.tooling)
     debugImplementation(libs.ui.test.manifest)
-
 }
 java {
     toolchain {
