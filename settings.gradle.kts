@@ -21,12 +21,11 @@ plugins {
     id("org.gradle.toolchains.foojay-resolver-convention") version "0.8.0"
 }
 
-include(":core", ":android", ":android:app", ":core:assets", ":backend", ":desktop", ":web")
+include(":core", ":android", ":android:app", ":backend", ":desktop", ":web")
 
 project(":core").projectDir = file("core")
 project(":android").projectDir = file("android")
 project(":android:app").projectDir = file("android/app")
-project(":core:assets").projectDir = file("core/assets")
 project(":backend").projectDir = file("backend")
 project(":desktop").projectDir = file("desktop")
 project(":web").projectDir = file("web")
