@@ -22,8 +22,9 @@ repositories {
 }
 
 dependencies {
-    implementation("org.jmonkeyengine:jme3-desktop:3.7.0-stable")
-    implementation("org.jmonkeyengine:jme3-plugins:3.7.0-stable")
+    implementation("org.jmonkeyengine:jme3-desktop:3.7.0-stable") {
+        exclude(group = "org.jmonkeyengine", module = "jme3-android")
+    }
     implementation("org.jmonkeyengine:jme3-lwjgl3:3.7.0-stable")
     if (!System.getProperty("os.name").lowercase(Locale.getDefault()).contains("mac")) {
         implementation("org.jmonkeyengine:jme3-awt-dialogs:3.7.0-stable")
