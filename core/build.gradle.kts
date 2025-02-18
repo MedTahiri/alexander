@@ -28,6 +28,7 @@ dependencies {
     implementation(libs.jme3.jogg)
     implementation(libs.jme3.plugins)
     implementation(libs.monkeywrench)
+    implementation("org.apache.commons:commons-csv:1.10.0")
 }
 
 java {
