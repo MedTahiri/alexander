@@ -3,19 +3,19 @@ package com.mohamed.tahiri;
 import com.jme3.app.SimpleApplication;
 import com.jme3.system.AppSettings;
 
-import javafx.application.Application;
-import javafx.application.Platform;
-import javafx.scene.Scene;
-import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
-import com.jme3.app.SimpleApplication;
-import com.jme3.system.AppSettings;
-import javafx.application.Application;
-import javafx.application.Platform;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
+//import javafx.application.Application;
+//import javafx.application.Platform;
+//import javafx.scene.Scene;
+//import javafx.scene.layout.VBox;
+//import javafx.stage.Stage;
+//import com.jme3.app.SimpleApplication;
+//import com.jme3.system.AppSettings;
+//import javafx.application.Application;
+//import javafx.application.Platform;
+//import javafx.scene.Scene;
+//import javafx.scene.control.Button;
+//import javafx.scene.layout.VBox;
+//import javafx.stage.Stage;
 
 public class Main extends SimpleApplication {
     public static void main(String[] args) {
