@@ -24,7 +24,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -41,10 +40,16 @@ public class Core extends SimpleApplication {
 
     @Override
     public void simpleInitApp() {
-        assetManager.registerLoader(LwjglAssetLoader.class, "gltf");
-        LwjglAssetKey lwjglAssetKey = new LwjglAssetKey("Models/3d.gltf");
-        lwjglAssetKey.setVerboseLogging(true);
-        Spatial model = assetManager.loadModel(lwjglAssetKey);
+
+        Spatial model;
+        if (System.getProperty("java.vm.name").equalsIgnoreCase("Dalvik")) {
+            model = assetManager.loadModel("Models/3d.gltf");
+        } else {
+            assetManager.registerLoader(LwjglAssetLoader.class, "gltf");
+            LwjglAssetKey lwjglAssetKey = new LwjglAssetKey("Models/3d.gltf");
+            lwjglAssetKey.setVerboseLogging(true);
+            model = assetManager.loadModel(lwjglAssetKey);
+        }
 
         rootNode.attachChild(model);
 
@@ -63,6 +68,7 @@ public class Core extends SimpleApplication {
         ambient.setColor(ColorRGBA.White.mult(0.3f));
         rootNode.addLight(ambient);
 
+        //todo("android will show error her")
         geometry = (Geometry) ((Node) ((Node) ((Node) model).getChild(0)).getChild(0)).getChild(0);
 
         String[] f = geometry.getMesh().getMorphTargetNames();
